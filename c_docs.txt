@@ -1,0 +1,149 @@
+compiled -- can run directly on the cpu (nice therefore faster machine code exec)
+
+keywords
+32
+
+auto - defines automatic storage duration -- defalut for local variables
+break
+switch
+case  
+defalut
+char
+const
+continue
+do 
+double
+else
+enum
+extern -- declares a variable or functions that is defined in another file
+float
+for 
+goto -- transfers control to a labelled statement
+if
+int
+long
+register -- requests that a variable be stored in a cpu register (not used in day to day programs)
+return 
+short
+signed  -- spcifies a signed data type(positive and negative values)
+sizeof - data type/obj size 
+static
+struct
+typedef -- defines a new type name for an existing type
+union -- defines a uniontype that can store different data types in the same memory loc 
+unsigned -- only pos values
+void
+volatile -- indicates that a variable may be changed by external process
+while
+
+
+library linking -- when calling a library function the linker combines the code that you wrote with the object code already found in the standard library, this process is called linking 
+
+
+c memory map --
+4 distinct parts -- 
+
+1 -- the memory that holds the actual code
+2 -- storing the global variables
+3 -- stack 
+4 -- heap
+
+
+data types : 
+int - 4 bytes
+char - 1 byte 
+float - 4 bytes 
+double - 8 bytes 
+
+
+derived -- array , struct, union , enum 
+
+modifiers -- can change the meaning of basic data types to adjust the size or sign 
+signed
+unsigned 
+short -- shortens the int type size 
+long extends the size of integer
+long long -- even larger sizes 
+
+
+struct/union --
+struct : 
+each member has its own memory location
+all members are accessed simultaneously
+used for grouping different data
+the size of struct is the sum of sizes of individual elements
+
+union :
+allocates memory for the largest element only
+all member share the same memory location
+accesss is allowed to any one member at a time
+size of the struct is the size of the largest member of the union
+used for storing differnt types at the same location
+
+
+-- default int is signed but char is not
+
+
+variables:
+
+local
+formal params
+global variables
+
+
+
+one thing to note is that the functions define the scope of the variables and when the function returns then its defined variables are also destroyed . This can be prevented by telling the compiler to retain the values using the static keyword.
+
+
+
+4 scopes in c 
+file -- global vars 
+block  -- local to respective block 
+function prototype scope -- restricted to the function prototype scope 
+funciton scope -- applies only to the labels (addressed by the goto)
+
+
+
+type qualifiers -- how the tupes are read/written 
+
+const  
+volatile  -- variables value may be changed in ways not explicitly specified by the program.
+restrict 
+
+
+c linking -- c defines three categories of linkage - external internal none . 
+generally - functions and global variables have external linkage  this means that they are available to all files that constitue a program . declared as static have only linkage within the file. local within the block.
+
+storage class specifiers 
+tell the compiler how to store the subsequent variables.
+extern -- used when the declaration is done to the variable later in the file. this allows you to use the variable before its declared in the file.
+static 
+register
+auto
+
+extras /// bit masking -- 
+used to isolate, modify ro clear specific bits withing a binary number . 
+a bit mask is a binary number like 01000110 this is used as a filter to operate on other number , the ones in this specify the places where the effect will take place in the other number 
+
+
+& and * pointer operations :  
+a pointer is the memory address of an object.
+a pointer variable is declared to specially store the pointer to the specified type.
+& -- this returns the memory loc of the operand;
+m = &count = this says m stores the address of count
+* -- it returns the value of the object located at that address, complementary to the & operator eg = q = *m read as --- q gets the value at address specified by m 
+
+declare a pointer  char *ch; caution : ch is not a character its the pointer to the type char -- the char defined the type of pointer data 
+
+compile time operator sizeof() -- size of variable or type(defined in paranthesis)
+
+
+expression -- x =(y =3 , y+1) == the left side assigns the value the right side calculates the value;
+
+. and -> operator : access the individual elemets of the structures and unions 
+ the dot operator is used when working with the struct or union directly
+ the -> is used with the pointer to the struct or union 
+
+
+
+different types of statements in C 
